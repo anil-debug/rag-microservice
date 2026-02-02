@@ -1,0 +1,14 @@
+services:
+  rag:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      - VECTOR_STORE_PATH=/app/data/vector_store
