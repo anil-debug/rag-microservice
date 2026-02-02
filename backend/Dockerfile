@@ -2,16 +2,17 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# System deps for building some Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
+    build-essential curl \
     && rm -rf /var/lib/apt/lists/*
+
+# Install CPU-only PyTorch first (~200MB vs ~3GB with CUDA) so sentence-transformers doesn't pull CUDA
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ ./app/
-COPY data/ ./data/
 
 ENV PYTHONPATH=/app
 EXPOSE 8000

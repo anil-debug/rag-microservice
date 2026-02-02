@@ -1,14 +1,41 @@
+# No .env required. For overrides (e.g. OPENAI_API_KEY), create .env and run:
+#   docker compose --env-file .env up --build
+
 services:
-  rag:
+  backend:
     build:
-      context: .
-      dockerfile: docker/Dockerfile
-    working_dir: /app
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rag-backend
     ports:
       - "8000:8000"
-    env_file:
-      - .env
     volumes:
       - ./data:/app/data
     environment:
       - VECTOR_STORE_PATH=/app/data/vector_store
+      - VECTOR_STORE_BACKEND=faiss
+      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      - LLM_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.2
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: rag-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy

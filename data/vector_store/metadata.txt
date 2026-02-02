@@ -1,0 +1,112 @@
+30-Day Python DSA Roadmap
+ Checklist & Cheat Sheet
+Designed for beginners & working professionals
+Week 1 – Foundations
+●
+■ Day 1: Python basics, loops, functions, time complexity
+●
+■ Day 2: Arrays, list operations, two pointers
+●
+■ Day 3: Strings, palindrome, anagrams
+●
+■ Day 4: Hashing (dict, set) – Two Sum, frequency count
+●
+■ Day 5: Stack – valid parentheses, min stack
+●
+■ Day 6: Queue & Deque – sliding window basics
+●
+■ Day 7: Revision + mock problems
+Week 2 – Core Data Structures
+●
+■ Day 8:
+problems
+Week 2 – Core Data Structures
+●
+■ Day 8: Linked list basics, fast & slow pointers
+●
+■ Day 9: Linked list advanced problems
+●
+■ Day 10: Recursion fundamentals
+●
+■ Day 11: Binary search
+●
+■ Day 12: Sorting techniques
+●
+■ Day 13: Sliding window & two pointers
+●
+■ Day 14: Weekly revision
+Week 3 – Trees & Heaps
+●
+■ Day 15: Binary tree traversals (DFS)
+●
+■ Day 16: BFS & level order traversal
+●
+■ Day 17: Binary Search Tree (BST)
+●
+■ Day 18: Heap & priority queue
+●
+■ Day 19: Greedy algorithms
+ap & priority queue
+●
+■ Day 19: Greedy algorithms
+●
+■ Day 20: Backtracking
+●
+■ Day 21: Revision
+Week 4 – Advanced Topics
+●
+■ Day 22: Graph basics (DFS/BFS)
+●
+■ Day 23: Graph advanced (cycle detection)
+●
+■ Day 24: Dynamic programming intro
+●
+■ Day 25: Dynamic programming core
+
+●
+■ Day 26: Bit manipulation
+●
+■ Day 27: Math & logic problems
+●
+■ Day 28: Mock interview
+●
+■ Day 29: Weak area revision
+●
+■ Day 30: Final assessment
+
+Python DSA Cheat Sheet
+
+List: append(), pop(), slicing → O(1) avg
+
+Dic
+
+List: append(), pop(), slicing → O(1) avg
+
+Dictionary: dict[key] → O(1) lookup
+
+Set: unique elements, fast lookup
+
+Stack: use list.append() & list.pop()
+
+Queue: use collections.deque
+
+Binary Search: while l <= r
+
+Heap: use heapq (min heap)
+
+DFS: recursion or stack
+
+BFS: queue based traversal
+
+DP: identify overlapping subproblems
+
+Sliding Window: expand + shrink window
+
+Two Pointers: left & right indexes
+
+Time Complexity: avoid nested loops
+
+Always write space & time complexity
+ed loops
+
+Always write space & time complexity
